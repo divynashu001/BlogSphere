@@ -28,7 +28,7 @@ BlogSphere is a full-stack web application designed to provide a seamless bloggi
 Clone the repository to your local machine and navigate to the project directory:
 ```sh
 git clone <your-repo-url>
-cd simple-blog-platform
+cd BlogSphere
 ```
 
 ### 2. Set Up the Backend
