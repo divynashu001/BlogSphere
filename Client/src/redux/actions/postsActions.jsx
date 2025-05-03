@@ -14,7 +14,7 @@ export const DELETE_POST_FAILURE = 'DELETE_POST_FAILURE';
 export const fetchPosts = () => async (dispatch) => {
   dispatch({ type: FETCH_POSTS_REQUEST });
   try {
-    const res = await fetch('http://localhost:5000/api/posts');
+    const res = await fetch('https://blogsphere-g0pp.onrender.com/api/posts');
     if (!res.ok) throw new Error('Failed to fetch posts');
     const data = await res.json();
     dispatch({ type: FETCH_POSTS_SUCCESS, payload: data });
@@ -26,7 +26,7 @@ export const fetchPosts = () => async (dispatch) => {
 export const fetchPost = (id) => async (dispatch) => {
   dispatch({ type: FETCH_POST_REQUEST });
   try {
-    const res = await fetch(`http://localhost:5000/api/posts/${id}`);
+    const res = await fetch(`https://blogsphere-g0pp.onrender.com/api/posts/${id}`);
     if (!res.ok) throw new Error('Failed to fetch post');
     const data = await res.json();
     dispatch({ type: FETCH_POST_SUCCESS, payload: data });
@@ -39,7 +39,7 @@ export const savePost = (postData, id = null) => async (dispatch) => {
   dispatch({ type: SAVE_POST_REQUEST });
   try {
     const method = id ? 'PUT' : 'POST';
-    const url = id ? `http://localhost:5000/api/posts/${id}` : 'http://localhost:5000/api/posts';
+    const url = id ? `https://blogsphere-g0pp.onrender.com/api/posts/${id}` : 'https://blogsphere-g0pp.onrender.com/api/posts';
     const res = await fetch(url, {
       method,
       headers: { 'Content-Type': 'application/json' },
@@ -56,7 +56,7 @@ export const savePost = (postData, id = null) => async (dispatch) => {
 export const deletePost = (id) => async (dispatch) => {
   dispatch({ type: DELETE_POST_REQUEST });
   try {
-    const res = await fetch(`http://localhost:5000/api/posts/${id}`, {
+    const res = await fetch(`https://blogsphere-g0pp.onrender.com/api/posts/${id}`, {
       method: 'DELETE',
     });
     if (!res.ok) throw new Error('Failed to delete post');

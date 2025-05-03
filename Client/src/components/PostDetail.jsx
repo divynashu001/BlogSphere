@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { fetchPost, deletePost } from '../redux/actions/postsActions';
-import { FaArrowLeft, FaEdit, FaTrash } from 'react-icons/fa';
 
 function PostDetail() {
   const { id } = useParams();
